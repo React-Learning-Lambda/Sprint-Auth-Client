@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import withAuthCheck from "./utils/withAuthCheck";
 import Login from "./components/Login";
+import Jokes from './components/Jokes';
 
 
 function App() {
@@ -13,11 +14,11 @@ function App() {
       <div className="App">
       <FancyNav>
           <NavLink to='/'>Login</NavLink>
-          <NavLink to='/bubbles'>See Jokes</NavLink>
+          <NavLink to='/jokes'>See Jokes</NavLink>
         </FancyNav>
         <Route exact path="/" component={Login} />
 
-         {/* <Route path = '/bubbles' render = {props => withAuthCheck(BubblePage, props)} /> */}
+         <Route path = '/jokes' render = {props => withAuthCheck(Jokes, props)} />
         
         {/* 
           Build a PrivateRoute component that will 
